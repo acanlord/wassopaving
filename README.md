@@ -1,6 +1,6 @@
 # Wasso Paving — static Vite site
 
-This is a standard React/Vite single-page application. It builds to static files only; no Node server or Lovable/TanStack Start runtime is required in production.
+This is a standard React/Vite single-page application. It builds to static files only; no Node server is required in production.
 
 ## Develop locally
 
