@@ -1,0 +1,152 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Wasso Paving design system — "Asphalt & Safety Yellow"
+ * Industrial, high-contrast. All colors in oklch.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --font-display: "Bebas Neue", "Arial Narrow", sans-serif;
+  --font-sans: "Barlow", ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-asphalt: var(--asphalt);
+  --color-asphalt-foreground: var(--asphalt-foreground);
+  --color-steel: var(--steel);
+}
+
+:root {
+  --radius: 0.25rem;
+  --background: oklch(0.985 0.002 90);
+  --foreground: oklch(0.19 0.004 90);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.19 0.004 90);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.19 0.004 90);
+  /* safety yellow */
+  --primary: oklch(0.845 0.168 90.5);
+  --primary-foreground: oklch(0.16 0.003 90);
+  --secondary: oklch(0.22 0.003 90);
+  --secondary-foreground: oklch(0.97 0.002 90);
+  --muted: oklch(0.945 0.003 90);
+  --muted-foreground: oklch(0.48 0.005 90);
+  --accent: oklch(0.845 0.168 90.5);
+  --accent-foreground: oklch(0.16 0.003 90);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.9 0.003 90);
+  --input: oklch(0.88 0.003 90);
+  --ring: oklch(0.845 0.168 90.5);
+  --asphalt: oklch(0.17 0.003 90);
+  --asphalt-foreground: oklch(0.97 0.002 90);
+  --steel: oklch(0.33 0.004 90);
+
+  --shadow-hard: 6px 6px 0 var(--asphalt);
+  --gradient-asphalt: linear-gradient(
+    180deg,
+    oklch(0.17 0.003 90 / 0.94) 0%,
+    oklch(0.17 0.003 90 / 0.72) 55%,
+    oklch(0.17 0.003 90 / 0.92) 100%
+  );
+}
+
+.dark {
+  --background: oklch(0.17 0.003 90);
+  --foreground: oklch(0.97 0.002 90);
+  --card: oklch(0.22 0.003 90);
+  --card-foreground: oklch(0.97 0.002 90);
+  --popover: oklch(0.22 0.003 90);
+  --popover-foreground: oklch(0.97 0.002 90);
+  --primary: oklch(0.845 0.168 90.5);
+  --primary-foreground: oklch(0.16 0.003 90);
+  --secondary: oklch(0.28 0.003 90);
+  --secondary-foreground: oklch(0.97 0.002 90);
+  --muted: oklch(0.26 0.003 90);
+  --muted-foreground: oklch(0.72 0.004 90);
+  --accent: oklch(0.845 0.168 90.5);
+  --accent-foreground: oklch(0.16 0.003 90);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.845 0.168 90.5);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: 0.01em;
+    line-height: 0.95;
+    text-transform: uppercase;
+  }
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+@utility hazard-stripe {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--asphalt) 0 14px,
+    var(--primary) 14px 28px
+  );
+}
+
+@utility asphalt-scrim {
+  background-image: var(--gradient-asphalt);
+}
+
+@utility btn-hard {
+  box-shadow: var(--shadow-hard);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+
+  &:hover {
+    transform: translate(3px, 3px);
+    box-shadow: 3px 3px 0 var(--asphalt);
+  }
+}
