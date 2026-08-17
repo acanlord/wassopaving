@@ -1,9 +1,24 @@
 export const site = {
   name: "Wasso Paving",
+  url: "https://www.wassopaving.com",
   phoneDisplay: "(925) 565-9048",
   phoneHref: "tel:+19255659048",
   areaShort: "the Bay Area",
-  areaLong: "the San Francisco Bay Area & Northern California",
+  areaLong: "the San Francisco Bay Area and surrounding communities",
+  serviceAreas: [
+    "Concord",
+    "Walnut Creek",
+    "Martinez",
+    "Antioch",
+    "Pleasant Hill",
+    "San Ramon",
+    "Dublin",
+    "Livermore",
+    "Oakland",
+    "Hayward",
+    "Berkeley",
+    "Tri-Valley",
+  ],
 };
 
 export type Service = {

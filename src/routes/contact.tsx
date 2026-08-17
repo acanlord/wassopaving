@@ -5,9 +5,9 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { EstimateForm } from "@/components/EstimateForm";
 import { site } from "@/lib/site";
 
-const title = "Contact Wasso Paving | Free Asphalt Paving Estimates";
+const title = "Contact Wasso Paving | Free Bay Area Paving Estimate";
 const description =
-  "Request a free asphalt paving estimate from Wasso Paving. Call (925) 565-9048 or send project details and we'll walk the site with you.";
+  "Request a free asphalt paving estimate from Wasso Paving. We serve homeowners and businesses across the Bay Area with asphalt paving, overlays, seal coating, patching, and grading.";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -16,10 +16,11 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
-      { property: "og:url", content: "/contact" },
+      { property: "og:url", content: `${site.url}/contact` },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: site.name },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: `${site.url}/contact` }],
   }),
   component: ContactPage,
 });

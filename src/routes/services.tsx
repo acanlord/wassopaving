@@ -4,9 +4,9 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { services, site } from "@/lib/site";
 
-const title = "Paving Services | Overlays, Seal Coating & Grading | Wasso Paving";
+const title = "Bay Area Asphalt Paving Services | Wasso Paving";
 const description =
-  "Asphalt paving, overlays, seal coating, patching, and grading for driveways, parking lots, and private roads across the Bay Area.";
+  "Wasso Paving offers asphalt paving, overlays, seal coating, patching, and grading for driveways, parking lots, and private roads throughout the Bay Area.";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -15,10 +15,11 @@ export const Route = createFileRoute("/services")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
-      { property: "og:url", content: "/services" },
+      { property: "og:url", content: `${site.url}/services` },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: site.name },
     ],
-    links: [{ rel: "canonical", href: "/services" }],
+    links: [{ rel: "canonical", href: `${site.url}/services` }],
   }),
   component: ServicesPage,
 });

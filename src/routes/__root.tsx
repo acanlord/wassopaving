@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
+import { site } from "@/lib/site";
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
@@ -76,23 +77,42 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Wasso Paving | Bay Area Asphalt Contractor" },
+      { title: "Wasso Paving | Bay Area Asphalt Paving Contractor" },
       {
         name: "description",
         content:
-          "Wasso Paving: asphalt paving, overlays, seal coating, patching, and grading across the Bay Area.",
+          "Wasso Paving provides asphalt paving, overlays, seal coating, patching, and grading for homes and businesses across the Bay Area. Free estimates available.",
       },
-      { name: "author", content: "Wasso Paving" },
-      { property: "og:site_name", content: "Wasso Paving" },
+      {
+        name: "keywords",
+        content:
+          "Bay Area asphalt paving, asphalt contractor, driveway paving, parking lot paving, seal coating, commercial paving, asphalt repair, Bay Area paving company",
+      },
+      { name: "author", content: site.name },
+      { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large" },
+      { property: "og:site_name", content: site.name },
       { property: "og:type", content: "website" },
+      { property: "og:title", content: "Wasso Paving | Bay Area Asphalt Paving Contractor" },
+      {
+        property: "og:description",
+        content:
+          "Wasso Paving provides asphalt paving, overlays, seal coating, patching, and grading for homes and businesses across the Bay Area. Free estimates available.",
+      },
+      { property: "og:url", content: site.url },
       { name: "twitter:card", content: "summary_large_image" },
-
+      { name: "twitter:title", content: "Wasso Paving | Bay Area Asphalt Paving Contractor" },
+      {
+        name: "twitter:description",
+        content:
+          "Asphalt paving, overlays, seal coating, patching, and grading in the Bay Area. Call for a free estimate.",
+      },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "canonical", href: site.url },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

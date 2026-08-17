@@ -5,9 +5,9 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { site } from "@/lib/site";
 import aboutEquipment from "@/assets/about-equipment.jpg";
 
-const title = "About Wasso Paving | Family-Owned Bay Area Asphalt Contractor";
+const title = "About Wasso Paving | Bay Area Asphalt Contractor";
 const description =
-  "Wasso Paving is a family-owned, locally operated asphalt contractor serving the Bay Area with paving, overlays, seal coating, patching, and grading.";
+  "Learn why homeowners and businesses choose Wasso Paving for Bay Area asphalt paving, overlays, seal coating, patching, and grading. Family-owned and locally trusted.";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -16,10 +16,11 @@ export const Route = createFileRoute("/about")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
-      { property: "og:url", content: "/about" },
+      { property: "og:url", content: `${site.url}/about` },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: site.name },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: `${site.url}/about` }],
   }),
   component: AboutPage,
 });

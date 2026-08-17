@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { site } from "@/lib/site";
 import workDriveway from "@/assets/work-driveway.jpg";
 import workSealcoat from "@/assets/work-sealcoat.jpg";
 import workOverlay from "@/assets/work-overlay.jpg";
@@ -8,9 +9,9 @@ import workGrading from "@/assets/work-grading.jpg";
 import workPatching from "@/assets/work-patching.jpg";
 import aboutEquipment from "@/assets/about-equipment.jpg";
 
-const title = "Our Work | Paving Projects Portfolio | Wasso Paving";
+const title = "Bay Area Paving Projects | Wasso Paving Work";
 const description =
-  "See recent Wasso Paving projects: residential driveways, commercial lot overlays, seal coating, patching, and site grading across the Bay Area.";
+  "See recent Wasso Paving projects, including residential driveways, commercial overlays, seal coating, patching, and site grading across the Bay Area.";
 
 export const Route = createFileRoute("/work")({
   head: () => ({
@@ -19,10 +20,11 @@ export const Route = createFileRoute("/work")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
-      { property: "og:url", content: "/work" },
+      { property: "og:url", content: `${site.url}/work` },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: site.name },
     ],
-    links: [{ rel: "canonical", href: "/work" }],
+    links: [{ rel: "canonical", href: `${site.url}/work` }],
   }),
   component: WorkPage,
 });

@@ -10,9 +10,9 @@ import workSealcoat from "@/assets/work-sealcoat.jpg";
 import workOverlay from "@/assets/work-overlay.jpg";
 import aboutEquipment from "@/assets/about-equipment.jpg";
 
-const title = "Wasso Paving | Asphalt Paving & Seal Coating in the Bay Area";
+const title = "Bay Area Asphalt Paving Contractor | Wasso Paving";
 const description =
-  "Wasso Paving delivers asphalt paving, overlays, seal coating, patching, and grading for homes and businesses across the Bay Area. Call (925) 565-9048 for a free estimate.";
+  "Wasso Paving provides Bay Area asphalt paving, overlays, seal coating, patching, and grading for residential and commercial properties. Free estimates available. Call (925) 565-9048.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -21,20 +21,30 @@ export const Route = createFileRoute("/")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: `${site.url}/` },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: site.name },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: `${site.url}/` }],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          name: "Wasso Paving",
+          name: site.name,
+          url: site.url,
           description,
           telephone: "+1-925-565-9048",
-          areaServed: "San Francisco Bay Area, California",
+          areaServed: site.serviceAreas,
+          address: {
+            "@type": "PostalAddress",
+            addressRegion: "CA",
+            addressCountry: "US",
+          },
           priceRange: "$$",
           openingHours: "Mo-Sa 07:00-18:00",
           makesOffer: services.map((s) => ({
