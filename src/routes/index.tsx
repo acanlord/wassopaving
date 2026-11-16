@@ -58,58 +58,53 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-
 function Home() {
   return (
     <div className="min-h-screen">
       <SiteHeader />
 
-      <section className="relative">
+      <section className="relative min-h-[620px] overflow-hidden sm:min-h-[700px]">
         <img
           src={heroImg}
           alt="Wasso Paving crew laying fresh asphalt on a commercial parking lot at sunset"
           width={1920}
           height={1088}
-          className="absolute inset-0 size-full object-cover"
+          fetchPriority="high"
+          className="absolute inset-0 size-full object-cover object-center"
         />
-        <div className="asphalt-scrim relative">
-          <div className="mx-auto grid max-w-6xl gap-12 px-5 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:py-28">
-            <div className="text-asphalt-foreground">
-              <span className="eyebrow">Licensed & insured · {site.areaShort}</span>
-              <h1 className="mt-4 text-5xl sm:text-6xl lg:text-7xl">
-                Asphalt done right
+        <div className="asphalt-scrim relative flex min-h-[620px] items-center sm:min-h-[700px]">
+          <div className="mx-auto w-full max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
+            <div className="max-w-4xl text-asphalt-foreground">
+              <span className="inline-flex items-center gap-2 bg-primary px-3 py-2 text-xs font-bold uppercase tracking-wider text-primary-foreground sm:px-4 sm:text-sm">
+                <Star className="size-4 shrink-0 fill-current" aria-hidden="true" />
+                <span className="whitespace-nowrap sm:hidden">Serving {site.areaShort}</span>
+                <span className="hidden whitespace-nowrap sm:inline">
+                  Paving across {site.areaShort}
+                </span>
+              </span>
+              <h1 className="mt-6 max-w-4xl text-5xl leading-[0.9] sm:text-7xl lg:text-8xl">
+                Paving services
                 <br />
-                <span className="text-primary">the first time</span>
+                you can rely on
               </h1>
-              <p className="mt-6 max-w-lg text-base leading-relaxed text-asphalt-foreground/80">
-                Overlays, seal coating, patching, grading, and full paving for driveways,
-                parking lots, and private roads throughout {site.areaLong}.
+              <p className="mt-6 max-w-2xl text-lg font-semibold leading-relaxed text-asphalt-foreground/90 sm:text-xl">
+                Family-owned, locally trusted asphalt paving for homes and businesses — built on 25+
+                years of experience.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
+                <Link
+                  to="/contact"
+                  className="btn-hard inline-flex items-center gap-2 bg-primary px-7 py-5 font-display text-2xl leading-none text-primary-foreground"
+                >
+                  Free Quote <ArrowRight className="size-5" aria-hidden="true" />
+                </Link>
                 <a
                   href={site.phoneHref}
-                  className="btn-hard flex items-center gap-2 bg-primary px-6 py-4 font-display text-2xl leading-none text-primary-foreground"
+                  className="inline-flex items-center gap-2 border-2 border-primary bg-white px-7 py-5 font-display text-2xl leading-none text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
                 >
                   <Phone className="size-5" aria-hidden="true" />
                   {site.phoneDisplay}
                 </a>
-                <Link
-                  to="/services"
-                  className="flex items-center gap-2 border-2 border-asphalt-foreground/30 px-6 py-4 font-display text-2xl leading-none text-asphalt-foreground transition-colors hover:border-primary hover:text-primary"
-                >
-                  Our Services
-                  <ArrowRight className="size-5" aria-hidden="true" />
-                </Link>
-              </div>
-            </div>
-
-            <div className="bg-card p-6 shadow-xl sm:p-8">
-              <h2 className="text-3xl">Request a Free Estimate</h2>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Tell us about the job and we'll come measure it.
-              </p>
-              <div className="mt-6">
-                <EstimateForm />
               </div>
             </div>
           </div>
@@ -131,6 +126,22 @@ function Home() {
         </div>
       </section>
 
+      <section className="bg-muted">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
+          <div className="self-center">
+            <span className="eyebrow">Start with a free estimate</span>
+            <h2 className="mt-3 text-4xl sm:text-5xl">Tell us about your project</h2>
+            <p className="mt-5 max-w-lg text-base leading-relaxed text-muted-foreground">
+              From a driveway to a commercial lot, we'll take a look, answer your questions, and
+              provide a clear written estimate.
+            </p>
+          </div>
+          <div className="bg-card p-6 shadow-lg sm:p-8">
+            <EstimateForm />
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 lg:grid-cols-2">
         <img
           src={aboutEquipment}
@@ -144,9 +155,9 @@ function Home() {
           <span className="eyebrow">Locally owned</span>
           <h2 className="mt-3 text-4xl sm:text-5xl">Your neighborhood paving crew</h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-            Wasso Paving is a family-run asphalt contractor working out of the East Bay. We
-            run our own crews and our own equipment, which means the person who bids your
-            job is the person standing on it while the paver rolls.
+            Wasso Paving is a family-run asphalt contractor working out of the East Bay. We run our
+            own crews and our own equipment, which means the person who bids your job is the person
+            standing on it while the paver rolls.
           </p>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
             From a single cracked driveway to a multi-acre commercial lot, we prep the base
@@ -179,9 +190,7 @@ function Home() {
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="mt-3 text-2xl">{s.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-asphalt-foreground/70">
-                  {s.blurb}
-                </p>
+                <p className="mt-3 text-sm leading-relaxed text-asphalt-foreground/70">{s.blurb}</p>
                 <span className="mt-5 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-primary">
                   More <ArrowRight className="size-3.5" aria-hidden="true" />
                 </span>

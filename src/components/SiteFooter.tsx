@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, MapPin, Clock } from "lucide-react";
 import { services, site } from "@/lib/site";
+import wassoLogo from "@/assets/wasso_logo.png";
 
 export function SiteFooter() {
   return (
@@ -8,13 +9,16 @@ export function SiteFooter() {
       <div className="hazard-stripe h-1.5" />
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <div className="flex items-baseline gap-2">
-            <span className="font-display text-3xl leading-none">Wasso</span>
-            <span className="eyebrow">Paving</span>
-          </div>
+          <img
+            src={wassoLogo}
+            alt="Wasso Paving"
+            className="h-auto w-52"
+            width={1774}
+            height={887}
+          />
           <p className="mt-4 text-sm leading-relaxed text-asphalt-foreground/70">
-            Asphalt paving, overlays, seal coating, patching, and grading for homes and
-            businesses across {site.areaLong}.
+            Asphalt paving, overlays, seal coating, patching, and grading for homes and businesses
+            across {site.areaLong}.
           </p>
         </div>
 
