@@ -4,10 +4,9 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { EstimateForm } from "@/components/EstimateForm";
 import { site } from "@/lib/site";
+import pageMetadata from "@/lib/page-metadata.json";
 
-const title = "Contact Wasso Paving | Free Bay Area Paving Estimate";
-const description =
-  "Request a free asphalt paving estimate from Wasso Paving. We serve homeowners and businesses across the Bay Area with asphalt paving, overlays, seal coating, patching, and grading.";
+const { title, description } = pageMetadata.contact;
 
 export const Route = createFileRoute("/contact")({
   head: () => ({

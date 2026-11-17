@@ -3,10 +3,9 @@ import { Check, Phone } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { services, site } from "@/lib/site";
+import pageMetadata from "@/lib/page-metadata.json";
 
-const title = "Bay Area Asphalt Paving Services | Wasso Paving";
-const description =
-  "Wasso Paving offers asphalt paving, overlays, seal coating, patching, and grading for driveways, parking lots, and private roads throughout the Bay Area.";
+const { title, description } = pageMetadata.services;
 
 export const Route = createFileRoute("/services")({
   head: () => ({

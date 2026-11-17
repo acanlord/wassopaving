@@ -1,6 +1,6 @@
 export const site = {
   name: "Wasso Paving",
-  url: "https://www.wassopaving.com",
+  url: "https://wassopaving.com",
   phoneDisplay: "(925) 565-9048",
   phoneHref: "tel:+19255659048",
   areaShort: "the Bay Area",

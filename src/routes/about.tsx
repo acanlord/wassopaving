@@ -3,11 +3,10 @@ import { Users, ShieldCheck, Map } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { site } from "@/lib/site";
+import pageMetadata from "@/lib/page-metadata.json";
 import aboutEquipment from "@/assets/about-equipment.jpg";
 
-const title = "About Wasso Paving | Bay Area Asphalt Contractor";
-const description =
-  "Learn why homeowners and businesses choose Wasso Paving for Bay Area asphalt paving, overlays, seal coating, patching, and grading. Family-owned and locally trusted.";
+const { title, description } = pageMetadata.about;
 
 export const Route = createFileRoute("/about")({
   head: () => ({

@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { site } from "@/lib/site";
+import pageMetadata from "@/lib/page-metadata.json";
 import workDriveway from "@/assets/work-driveway.jpg";
 import workSealcoat from "@/assets/work-sealcoat.jpg";
 import workOverlay from "@/assets/work-overlay.jpg";
@@ -9,9 +10,7 @@ import workGrading from "@/assets/work-grading.jpg";
 import workPatching from "@/assets/work-patching.jpg";
 import aboutEquipment from "@/assets/about-equipment.jpg";
 
-const title = "Bay Area Paving Projects | Wasso Paving Work";
-const description =
-  "See recent Wasso Paving projects, including residential driveways, commercial overlays, seal coating, patching, and site grading across the Bay Area.";
+const { title, description } = pageMetadata.work;
 
 export const Route = createFileRoute("/work")({
   head: () => ({

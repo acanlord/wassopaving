@@ -1,0 +1,27 @@
+{
+  "home": {
+    "path": "/",
+    "title": "Bay Area Asphalt Paving Contractor | Wasso Paving",
+    "description": "Wasso Paving provides Bay Area asphalt paving, overlays, seal coating, patching, and grading for residential and commercial properties. Free estimates available. Call (925) 565-9048."
+  },
+  "services": {
+    "path": "/services",
+    "title": "Bay Area Asphalt Paving Services | Wasso Paving",
+    "description": "Wasso Paving offers asphalt paving, overlays, seal coating, patching, and grading for driveways, parking lots, and private roads throughout the Bay Area."
+  },
+  "work": {
+    "path": "/work",
+    "title": "Bay Area Paving Projects | Wasso Paving Work",
+    "description": "See recent Wasso Paving projects, including residential driveways, commercial overlays, seal coating, patching, and site grading across the Bay Area."
+  },
+  "about": {
+    "path": "/about",
+    "title": "About Wasso Paving | Bay Area Asphalt Contractor",
+    "description": "Learn why homeowners and businesses choose Wasso Paving for Bay Area asphalt paving, overlays, seal coating, patching, and grading. Family-owned and locally trusted."
+  },
+  "contact": {
+    "path": "/contact",
+    "title": "Contact Wasso Paving | Free Bay Area Paving Estimate",
+    "description": "Request a free asphalt paving estimate from Wasso Paving. We serve homeowners and businesses across the Bay Area with asphalt paving, overlays, seal coating, patching, and grading."
+  }
+}

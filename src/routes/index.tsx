@@ -4,15 +4,14 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { EstimateForm } from "@/components/EstimateForm";
 import { reviews, services, site } from "@/lib/site";
+import pageMetadata from "@/lib/page-metadata.json";
 import heroImg from "@/assets/hero-paving.jpg";
 import workDriveway from "@/assets/work-driveway.jpg";
 import workSealcoat from "@/assets/work-sealcoat.jpg";
 import workOverlay from "@/assets/work-overlay.jpg";
 import aboutEquipment from "@/assets/about-equipment.jpg";
 
-const title = "Bay Area Asphalt Paving Contractor | Wasso Paving";
-const description =
-  "Wasso Paving provides Bay Area asphalt paving, overlays, seal coating, patching, and grading for residential and commercial properties. Free estimates available. Call (925) 565-9048.";
+const { title, description } = pageMetadata.home;
 
 export const Route = createFileRoute("/")({
   head: () => ({

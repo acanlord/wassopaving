@@ -1,5 +1,14 @@
 Options -MultiViews
 RewriteEngine On
+AddType application/xml .xml
+
+# Use the apex HTTPS hostname as the sole canonical origin.
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} !^wassopaving\.com$ [NC]
+RewriteRule ^ https://wassopaving.com%{REQUEST_URI} [R=301,L,NE]
+
+# Serve page-specific metadata in the initial HTML response.
+RewriteRule ^(about|services|work|contact)/?$ $1.html [L]
 
 # Serve Vite's client-side routes from index.html, while leaving real files alone.
 RewriteCond %{REQUEST_FILENAME} -f [OR]
